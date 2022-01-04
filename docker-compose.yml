@@ -1,0 +1,12 @@
+version: '3.0'
+services:
+ niagahoster-frontend-laravel:
+  build:
+   context: ./
+   dockerfile: Dockerfile
+  container_name: niagahoster-frontend-laravel
+  volumes:
+   - ./:/usr/src/niagahoster
+  ports:
+   - 8001:8001
+  tty: true
