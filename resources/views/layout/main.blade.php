@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>NiagaHoster</title>
+  <title>Niagahoster</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -145,9 +145,6 @@
 
     </div>
   </section><!-- End Featured Services Section -->
-
-
-
   <!-- ======= Pricing Section ======= -->
   <section id="pricing" class="pricing">
     <div class="container" data-aos="fade-up">
@@ -157,104 +154,28 @@
       </div>
 
       <div class="row">
+        @foreach($data as $data)
         <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
-          <div class="box">
-            <h3>Bayi</h3>
-            <p><del>Rp 19.900</del></p>
-            <h4><sup>Rp</sup>0<span> / bln</span></h4>
+          <div class="box {{$data['best_seller']? 'featured':''}}">
+            <span class="{{$data['best_seller']? 'advanced':''}}">{{$data['best_seller']? 'Best Seller':''}}</span>
+            <h3><b>{{$data['title']}}</b></h3>
+            <p><del>Rp {{number_format($data['price_original'],0,",",".")}}</del></p>
+            <h4><sup>Rp </sup>{{number_format($data['price'],0,",",".")}}<span> / bln</span></h4>
             <ul>
-              <li><b>938</b> Pengguna Terdaftar</li>
-              <li><b>0.5X RESOURCE POWER</b></li>
-              <li><b>500 MB </b> Disk Space</li>
-              <li><b>Unlimited</b>Bandwidth</b></li>
-              <li><b>Unlimited</b> Databases</li>
-              <li><b>1</b> Domain</li>
-              <li><b>Instant</b> Backup</li>
-              <li><b>Unlimited</b> SSL Gratis Selamanya</li>
+              <li><b>{{$data['jumlah_pengguna']}}</b> Pengguna Terdaftar</li>
+              <li><b>{{$data['feature_title']}}</b></li>
+              @foreach($data['feature'] as $ft)
+              <li><b>{{$ft}} </b></li>
+              @endforeach
             </ul>
             <div class="btn-wrap">
-              <a href="#" class="btn-buy">Pilih Sekarang</a>
+              <a href="#" class="btn-buy">{{$data['button']}}</a>
             </div>
           </div>
         </div>
 
-        <div class="col-lg-3 col-md-6 mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="200">
-          <div class="box">
-            <h3>Pelajar</h3>
-            <p><del>Rp 46.900</del></p>
-            <h4><sup>Rp</sup>19<span> / bln</span></h4>
-            <ul>
-              <li><b>4.168</b> Pengguna Terdaftar</li>
-              <li><b>1X</b> RESOURCE POWER</li>
-              <li><b>Unlimited</b> Disk Space</li>
-              <li><b>Unlimited</b> Bandwidth</li>
-              <li><b>Unlimited</b> POP3 Email</li>
-              <li><b>Unlimited</b> Databases</li>
-              <li><b>10</b> Addon Domains</li>
-              <li><b>Instant</b> Backup</li>
-              <li><b>Domain</b> Gratis Selamanya</li>
-              <li><b>Unlimited</b> SSL Gratis Selamanya</li>
-            </ul>
-            <div class="btn-wrap">
-              <a href="#" class="btn-buy">Pilih Sekarang</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="300">
-          <div class="box featured">              
-            <span class="advanced">Best Seller</span>
-            <h3>Personal</h3>
-            <p><del>Rp 58.900</del></p>
-            <h4><sup>Rp</sup>19<span> / bln</span></h4>
-            <ul>
-              <li><b>10.017</b> Pengguna Terdaftar</li>
-              <li><b>2X</b> RESOURCE POWER</li>
-              <li><b>Unlimited</b> Disk Space</li>
-              <li><b>Unlimited</b> Bandwidth</li>
-              <li><b>Unlimited</b> POP3 Email</li>
-              <li><b>Unlimited</b> Databases</li>
-              <li><b>Unlimited</b> Addon Domains</li>
-              <li><b>Instant</b> Backup</li>
-              <li><b>Domain</b> Gratis Selamanya</li>
-              <li><b>Unlimited</b> SSL Gratis Selamanya</li>
-              <li><b>Private</b> Name Server</li>
-              <li><b>SpamAssasin</b> Mail Protection</li>
-            </ul>
-            <div class="btn-wrap">
-              <a href="#" class="btn-buy">Pilih Sekarang</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="400">
-          <div class="box">
-            <h3>Bisnis</h3>
-            <p><del>Rp 109.900</del></p>
-            <h4><sup>Rp</sup>19<span> / bln</span></h4>
-            <ul>
-              <li><b>3.552</b> Pengguna Terdaftar</li>
-              <li><b>3X</b> RESOURCE POWER</li>
-              <li><b>Unlimited</b> Disk Space</li>
-              <li><b>Unlimited</b> Bandwidth</li>
-              <li><b>Unlimited</b> POP3 Email</li>
-              <li><b>Unlimited</b> Databases</li>
-              <li><b>Unlimited</b> Addon Domains</li>
-              <li><b>Magic Auto</b> Backup & Restore</li>
-              <li><b>Domain</b> Gratis Selamanya</li>
-              <li><b>Unlimited</b> SSL Gratis Selamanya</li>
-              <li><b>Private</b> Name Server</li>
-              <li><b>Prioritas</b> Layanan Support</li>
-              <li><b>SpamAssasin</b> Mail Protection</li>
-              <li><b>*****</b></li>
-              <li><b>SpamExpert</b> Pro Mail Protection</li>
-            </ul>
-            <div class="btn-wrap">
-              <a href="#" class="btn-buy">Diskon 40%</a>
-            </div>
-          </div>
-        </div>
-
+       
+      @endforeach
       </div>
 
     </div>

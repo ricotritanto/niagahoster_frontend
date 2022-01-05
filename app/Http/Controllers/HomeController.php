@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class HomeController extends BaseController
 {
@@ -15,6 +16,10 @@ class HomeController extends BaseController
     }
 
     public function index(){
-        return view('layout.main');
+        $path = storage_path() . "/data.json";
+
+        $data = json_decode(file_get_contents($path), true); 
+        // print_r($data);
+        return view('layout.main',compact('data')); 
     }
 }
