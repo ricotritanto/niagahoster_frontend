@@ -30,6 +30,7 @@ Clone this repository
     composer dump-autoload
     npm install
     docker-compose up -d --build
+    php artisan storage:link
 
 Now open <a href="http://localhost:8001">localhost</a>
 
